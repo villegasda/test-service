@@ -9,8 +9,8 @@ import java.util.List;
  */
 public interface UserService {
     List<User> getUsers();
-    User getUser(int id);
+    User getUser(long id);
     User add(User u);
     User edit(User u);
-    User delete(int id);    
+    User delete(long id);    
 }

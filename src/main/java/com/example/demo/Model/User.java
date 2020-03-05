@@ -7,11 +7,8 @@ import javax.persistence.*;
  * @author daniel
  */
 @Entity
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_user")
-    private int id;
+public class User extends ModelBase{
+    
     @Column(name = "email")
     private String email;
     @Column(name = "password")
@@ -20,14 +17,6 @@ public class User {
     @JoinColumn(name = "id_person", unique = true)
     @OneToOne
     private Person person;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getEmail() {
         return email;
@@ -45,18 +34,12 @@ public class User {
         this.password = password;
     }
 
-    public Person getPerson() {
-        return person;
-    }
-
-    public void setPerson(Person person) {
-        this.person = person;
-    }
-
     @Override
     public String toString() {
-        return "User{" + "id=" + id + ", email=" + email + ", password=" + password + '}';
+        return "User{" + "email=" + email + ", password=" + password + ", person=" + person + '}';
     }
+
+    
     
        
 }

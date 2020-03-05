@@ -21,11 +21,6 @@ public class UserServiceImp implements UserService{
     }
 
     @Override
-    public User getUser(int id) {
-        return repository.findById(id);
-    }
-
-    @Override
     public User add(User u) {
         return repository.save(u);
     }
@@ -33,10 +28,15 @@ public class UserServiceImp implements UserService{
     @Override
     public User edit(User u) {
         return repository.save(u);
+    }   
+
+    @Override
+    public User getUser(long id) {
+        return repository.findById(id);
     }
 
     @Override
-    public User delete(int id) {
+    public User delete(long id) {
         return repository.deleteById(id);
-    }    
+    }
 }

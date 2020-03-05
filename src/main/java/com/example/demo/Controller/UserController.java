@@ -34,12 +34,12 @@ public class UserController {
     }
     
     @PutMapping(path = {"/{id}"})
-    public User editUser(@RequestBody User user,@PathVariable("id") int id){
+    public User editUser(@RequestBody User user,@PathVariable("id") long id){
         user.setId(id);
         return service.edit(user);
     }
     @DeleteMapping(path = {"/{id}"})
-    public User deleteUser(@PathVariable("id")int id){
+    public User deleteUser(@PathVariable("id")long id){
         return service.delete(id);
     }
 }

@@ -10,9 +10,9 @@ import org.springframework.stereotype.Repository;
  * @author daniel
  */
 @Repository
-public interface UserRepository extends CrudRepository<User, Integer>{
+public interface UserRepository extends CrudRepository<User, Long>{
     List<User> findAll();
-    User findById(int id);
+    User findById(long id);
     User save(User u);
-    User deleteById(int id);
+    User deleteById(long id);
 }

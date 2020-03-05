@@ -5,6 +5,7 @@
  */
 package com.example.demo.Model;
 
+import java.util.Date;
 import javax.persistence.*;
 
 /**
@@ -12,25 +13,18 @@ import javax.persistence.*;
  * @author daniel
  */
 @Entity
-public class Person {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_persona")
-    private int id;
+public class Person extends ModelBase{
+
     @Column(name = "name")
     private String name;
     @Column(name = "lastname")
     private String lastName;
+    @Column(name = "celular")
+    private long celular;
     @Column(name = "direccion")
     private String direccion;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    @Column(name = "birthday")
+    private Date birthday;
 
     public String getName() {
         return name;
@@ -56,10 +50,27 @@ public class Person {
         this.direccion = direccion;
     }
 
+    public long getCelular() {
+        return celular;
+    }
+
+    public void setCelular(long celular) {
+        this.celular = celular;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
+
     @Override
     public String toString() {
-        return "Person{" + "id=" + id + ", name=" + name + ", lastName=" + lastName + ", direccion=" + direccion + '}';
+        return "Person{" + "name=" + name + ", lastName=" + lastName + ", celular=" + celular + ", direccion=" + direccion + ", birthday=" + birthday + '}';
     }
+
     
 
 }
