@@ -13,6 +13,8 @@ public class User extends ModelBase{
     private String email;
     @Column(name = "password")
     private String password;
+    @Column(name = "estado")
+    private boolean estado;
     
     @JoinColumn(name = "id_person", unique = true)
     @OneToOne
@@ -34,12 +36,26 @@ public class User extends ModelBase{
         this.password = password;
     }
 
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+    
+
     @Override
     public String toString() {
         return "User{" + "email=" + email + ", password=" + password + ", person=" + person + '}';
-    }
-
-    
-    
+    }  
        
 }
